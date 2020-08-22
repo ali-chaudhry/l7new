@@ -63,25 +63,23 @@ uploadImage.addEventListener('change', function() {
       const reader = new FileReader();
       reader.readAsDataURL(file[0]);
 
-reader.addEventListener("load", function(e) {
-      const src = e.target.result;  
-      image.src = src; 
-      
-
-              if(cropper !== null){
-                console.log(cropper)
-                cropper.destroy();
-              }  
-              
-              cropper = new Cropper(image, {
-              aspectRatio: 16 / 9,
-              crop(event) {
-                console.log(event.detail.width);
-                console.log(event.detail.height);
-                },
-              });
-          
-    });
+      reader.addEventListener("load", function(e) {
+            const src = e.target.result;  
+            image.src = src; 
+            
+                    if(cropper !== null){
+                      cropper.destroy();
+                    }  
+                    
+                    cropper = new Cropper(image, {
+                    aspectRatio: 16 / 9,
+                    crop(event) {
+                      console.log(event.detail.width);
+                      console.log(event.detail.height);
+                      },
+                    });
+                
+          });
 
 });
 

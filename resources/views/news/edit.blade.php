@@ -49,39 +49,40 @@
 
 @section('scripts')
 <script>
-$('#uploadImage').on('change', function() {
-var file = $(this).get(0).files;
-var reader = new FileReader();
-reader.readAsDataURL(file[0]);
-reader.addEventListener("load", function(e) {
-var image = e.target.result;
-$("#image").attr('src', image);
-});
+
+let cropper = null;
+
+var uploadiImage = document.getElementById('uploadImage');
+var image = document.getElementById('image');
+
+uploadImage.addEventListener('change', function() {
+
+      const file = $(this).get(0).files;
+      const reader = new FileReader();
+      reader.readAsDataURL(file[0]);
+
+      reader.addEventListener("load", function(e) {
+            const src = e.target.result;  
+            image.src = src; 
+            
+                    if(cropper !== null){
+                      cropper.destroy();
+                    }  
+                    
+                    cropper = new Cropper(image, {
+                    aspectRatio: 16 / 9,
+                    crop(event) {
+                      console.log(event.detail.width);
+                      console.log(event.detail.height);
+                      },
+                    });
+                
+          });
 
 });
 
 
-
-let cropper;
-
-const image = document.getElementById('image');
-
-image.addEventListener('load', function ()
-{
-
-  cropper = new Cropper(image, {
-  aspectRatio: 16 / 9,
-  crop(event) {
-    console.log(event.detail.width);
-    console.log(event.detail.height);
-  },
-});
-
-})
-
-
-
-let form = document.getElementById('myForm');
+var form = document.getElementById('myForm');
 let id = document.getElementById('newsId').value;
 var url = '/news/'+id;
 

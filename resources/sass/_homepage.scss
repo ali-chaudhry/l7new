@@ -1,0 +1,303 @@
+body{
+    font-family: "Noto Nastaliq Urdu","Helvetica", "Arial", sans-serif;
+    width: 100% !important;
+    height: 100% !important;
+    word-spacing: 2px;
+    letter-spacing: 1px;
+    overflow: hidden;
+    font-display: swap; 
+}
+
+a{
+  font-family: 'Noto Nastaliq Urdu';
+  font-display: swap;   
+}
+
+
+h1, h2, h3, h4,h5, h6{
+font-family: 'Noto Nastaliq Urdu';
+font-weight: 500;
+}
+
+h1, h2, h3, h4, h6{
+ color: #222;
+ line-height: 2;
+}
+
+h5{
+  color: #222;
+  line-height: 2 !important;
+  font-size:16px;
+ 
+}
+
+.underline{
+  padding-bottom: 2px;
+  text-decoration:underline;
+  text-underline-position: under;
+}
+p{
+    font-family: 'Noto Nastaliq Urdu';
+    font-weight: 500;
+    line-height: 2.5 !important;
+    font-size: 14px;
+    color: #444;
+}
+
+a:hover{
+text-decoration:none;
+}
+.navbar-nav{
+  padding-inline-start: 0px !important;
+}
+
+.search-input{
+  width: 250px; height:30px; border: 1px black solid 
+}
+
+.fa-clock{ 
+    display: block;
+    background:url('/img/clock.svg');
+    width:15px;
+    height:15px;
+    background-size:15px 15px;
+    background-repeat:no-repeat;
+    margin-top:10px;
+    margin-bottom:0;
+    
+}
+
+
+@media only screen and (max-width: 760px) {
+  .search-input{
+    width: 150px;  
+    }
+
+.navbar-nav{
+  padding-right: 37px !important;
+}
+
+ .navbar-brand span{
+  font-size: 22px !important;
+  padding: 5px !important;
+ }
+ 
+  h2{
+    font-size: 16px;
+  }
+  h3{
+    font-size: 15px
+  }
+  h4{
+    font-size: 14px;
+  }
+  h5{
+    font-size: 	13px;
+  }
+  p{
+    font-size: 	12px
+  }
+
+}
+
+
+
+.blue{
+  color:blue;
+}
+.nav-banner{
+  height: 70px !important;
+}
+
+.navbar{
+  background: #092285 !important;
+  padding: 0px !important;
+  line-height:1.6 !important; 
+}
+.navbar-collapse{
+  background: #092285 !important;
+}
+
+.navbar-brand span{
+  font-size: 25px;
+  padding: 10px;
+}
+
+.time{
+border-bottom: 2px solid blue;
+}
+
+.sub-heading{
+  color: blue;
+  border-bottom: 2px solid blue;
+}
+.footer p{
+  color: #fff;
+}
+
+@media only screen and (max-width: 769px) {
+  h1{
+    font-size: 20px !important;
+  }
+    
+.navbar{
+  background: #0929A7 !important;
+  padding: 0px !important;
+}
+
+.navbar-nav{
+   
+    padding-right: 37px !important;
+}
+
+.navbar-toggler{
+    display: block !important;
+    float: left !important;
+    border-color: transparent !important;
+  }  
+ 
+
+  .nav-link{
+      float:right !important;
+  }
+  .nav-banner{
+  height: 50px !important;
+}
+}
+
+@media only screen and (max-width: 990px) {
+  
+
+.navbar-nav{
+    float:right !important;
+    padding-right: 37px !important;
+}
+
+
+.navbar{
+  padding: 0px !important;
+  background: #092285 !important;
+}
+
+
+.navbar-collapse{
+  margin:0px !important;
+  width: 100% !important;
+}
+.nav-banner{
+  height: 70px !important;
+}
+
+.navbar-toggler{
+    display: block !important;
+    float: left !important;
+    border-color: transparent !important;
+  }  
+}
+
+@media only screen and (min-width: 991px) {
+  .navbar-toggler{
+    display: none !important;
+}
+.nav-link{
+      border-bottom:2px solid transparent  !important;
+  }
+
+.nav-link{
+  padding: 10px 16px !important;
+  border-bottom:3px solid transparent  !important;
+}
+.nav-link:hover{
+      border-bottom:3px solid #fff  !important;
+  }
+.active{
+      border-bottom:3px solid #fff  !important;
+  }
+
+}
+
+.footer{
+  background-color: #4B4A4A !important;
+}
+
+.social-link-icon{
+    width:40px;
+    height:40px;
+ 
+}
+
+div#load_screen{
+	background: #fff;
+	opacity: 1;
+	position: fixed;
+    z-index:10000;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+  align-items: center;
+}
+
+div#load_screen > div#loading{
+	color:#FFF;
+	width:100px;
+	height:10vh;
+	margin: 40vh auto 40vh auto !important;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+  div#load_screen > div#loading{
+	height:10%;
+	margin: 20% auto;
+}
+.row:before, .row:after {display: none !important;}
+}
+
+
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.navbar{
+     z-index: 9991 !important;
+}
+/* Fixed/sticky icon bar (vertically aligned 50% from the top of the screen) */
+.icon-bar {
+  position: fixed;
+  z-index: 999;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* Style the icon bar links */
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding:4px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 10px;
+}
+
+/* Style the social media icons with color, if you want */
+.icon-bar a:hover {
+  background-color: #A52A2A;
+ 
+}
+
+
+.youtube {
+  background: #bb0000;
+  color: white;
+}

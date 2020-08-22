@@ -30,6 +30,8 @@ class User extends Authenticatable
     protected $primaryKey = 'id';
 
 
+    
+
     protected $fillable = [
         'name', 'email', 'password',
     ];
@@ -49,26 +51,10 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = [
+        'id' => 'string',
         'email_verified_at' => 'datetime',
     ];
 
-    /**
-     * The model's default id.
-     *
-     */
-  
-    public static function boot()
-    {
-        parent::boot();
-        self::creating(function ($model) {
-            $model->id = Str::uuid();
-        });
-    }
     
-    public function getRouteKeyName()
-    {
-        return 'id';
-    }
-
-
+    
 }

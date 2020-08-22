@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Writer extends Model
+class Video extends Model
 {
     use Uuid;
     protected $primaryKey = 'id';
@@ -20,6 +20,6 @@ class Writer extends Model
     ];
 
     protected $fillable = [
-        'name', 'designation', 'user','summary', 'image'
+        'title', 'long_title', 'intro','video', 'body','user','publish'
     ];
 }

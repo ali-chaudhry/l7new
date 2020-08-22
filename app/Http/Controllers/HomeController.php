@@ -24,7 +24,6 @@ class HomeController extends Controller
      */
     public function index(){
                
-        DB::select('select * into posts [in mnnnews_laravel] from news');
         return view('home');
     }
 }

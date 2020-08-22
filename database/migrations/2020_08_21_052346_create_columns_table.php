@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePostsTable extends Migration
+class CreateColumnsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,21 +13,29 @@ class CreatePostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('columns', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->string('writer_name')->nullable();
             $table->string('title')->nullable();
             $table->string('image')->nullable();
             $table->text('long_title')->nullable();
-            $table->text('intro')->nullable();
             $table->text('body')->nullable();
             $table->boolean('publish')->default(1);
+            $table->uuid('writer_id');
             $table->uuid('user_id');
             $table->timestamps();
 
 
+            $table->foreign('writer_id')
+            ->references('id')
+            ->on('writers')
+            ->onDelete('cascade');
+
+            
             $table->foreign('user_id')
             ->references('id')
             ->on('users');
+
         });
     }
 
@@ -38,6 +46,6 @@ class CreatePostsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('columns');
     }
 }
